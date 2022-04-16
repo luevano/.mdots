@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# vim selection
+command -v nvim &> /dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+# verbosity
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -iv"
+alias mkdir="mkdir -pv"
+
+# ls and use color when available
+alias ls="ls -Ah --color=always --group-directories-first"
+	alias ll="ls -l"
+    alias lll="ls -ltr"
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+
+# dotfiles bare repository management
+alias dots="/usr/bin/git --git-dir=$HOME/.mdots/ --work-tree=$HOME"

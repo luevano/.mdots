@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# read personal programs
+export PATH="$PATH:$(du -L "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+# default programs
+if command -v nvim &> /dev/null; then
+    export EDITOR="nvim"
+elif command -v vim &> /dev/null; then
+    export EDITOR="vim"
+fi
+# ~/ cleanup
+	# XDG base directory specification found in:
+	# https://wiki.archlinux.org/index.php/XDG_Base_Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export GOPATH="$XDG_DATA_HOME/go"
+export LESSHISTFILE="-"
+export HISTFILE="$XDG_STATE_HOME/bash/history"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+# less
+export LESS=-R
+if command -v source-highlight &> /dev/null; then
+    export LESSOPEN="| /usr/sbin/source-highlight %s"
+fi
+    # Taken from LS's dots. Not sure if should keep the '\e', since without it
+    # less freaks out. Also, more info on the following links:
+    # https://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables
+    # https://misc.flogisoft.com/bash/tip_colors_and_formatting
+    # At last, I changed the codes to actually do what they're supposed to do.
+export LESS_TERMCAP_mb="$(printf '%b' '\e[5;31m')"
+export LESS_TERMCAP_md="$(printf '%b' '\e[1;36m')"
+export LESS_TERMCAP_me="$(printf '%b' '\e[0m')"
+export LESS_TERMCAP_so="$(printf '%b' '\e[1;45;33m')"
+export LESS_TERMCAP_se="$(printf '%b' '\e[0m')"
+export LESS_TERMCAP_us="$(printf '%b' '\e[4;32m')"
+export LESS_TERMCAP_ue="$(printf '%b' '\e[0m')"
+	# What these termcap variables mean:
+		# termcap terminfo
+		# ks      smkx      make the keypad send commands
+		# ke      rmkx      make the keypad send digits
+		# vb      flash     emit visual bell
+		# mb      blink     start blink
+		# md      bold      start bold
+		# me      sgr0      turn off bold, blink and underline
+		# so      smso      start standout (reverse video)
+		# se      rmso      stop standout
+		# us      smul      start underline
+		# ue      rmul      stop underline
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        source "$HOME/.bashrc"
+    fi
+fi
