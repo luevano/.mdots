@@ -1,6 +1,10 @@
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+if [ -f /etc/bashrc ]; then
+	source /etc/bashrc
+fi
+
 # color mapping
 grey='\[\033[1;30m\]'
 red='\[\033[0;31m\]'
