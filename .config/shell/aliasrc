@@ -12,7 +12,7 @@ alias mkdir="mkdir -pv"
 # ls and use color when available
 alias ls="ls -Ah --color=always --group-directories-first"
 	alias ll="ls -l"
-    alias lll="ls -ltr"
+	alias lll="ls -ltr"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 
