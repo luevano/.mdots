@@ -19,6 +19,9 @@ export GOPATH="$XDG_DATA_HOME/go"
 export LESSHISTFILE="-"
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+	# Golang specific
+export GOPATH="$XDG_DATA_HOME/go"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 # less
 export LESS=-R
 if command -v source-highlight &> /dev/null; then
