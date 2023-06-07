@@ -1,16 +1,15 @@
 #!/bin/sh
 
-# read personal programs
 export PATH="$PATH:$(du -L "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-# default programs
+
+# use neovim if available
 if command -v nvim &> /dev/null; then
     export EDITOR="nvim"
 elif command -v vim &> /dev/null; then
     export EDITOR="vim"
 fi
-# ~/ cleanup
-	# XDG base directory specification found in:
-	# https://wiki.archlinux.org/index.php/XDG_Base_Directory
+# $HOME cleanup
+# https://wiki.archlinux.org/index.php/XDG_Base_Directory
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -18,12 +17,13 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export LESSHISTFILE="-"
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-	# Golang specific
+# Golang
 export GOBIN="$HOME/.local/bin/go"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
-# read go programs
 export PATH="$PATH:$GOBIN:$GOPATH/bin"
+# GPG
+export GPG_TTY=$(tty)
 # less
 export LESS=-R
 if command -v source-highlight &> /dev/null; then
