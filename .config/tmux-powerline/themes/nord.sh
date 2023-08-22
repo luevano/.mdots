@@ -77,8 +77,11 @@ fi
 
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
+		# "mode 0 0 | 0 0 both_disable separator_disable" \
+		"mode_normal_prefix cyan black" \
+		"mode_insert_copy magenta" \
 		"tmux_session_info green black" \
-		"hostname blue white" \
+		"hostname yellow black" \
 		"vcs_branch red white" \
 		#"vcs_compare 60 255" \
 		#"vcs_staged 64 255" \
