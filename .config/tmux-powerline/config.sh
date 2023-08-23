@@ -25,7 +25,7 @@
 	export TMUX_POWERLINE_STATUS_JUSTIFICATION="left"
 
 	# The maximum length of the left status bar.
-	export TMUX_POWERLINE_STATUS_LEFT_LENGTH="60"
+	export TMUX_POWERLINE_STATUS_LEFT_LENGTH="90"
 	# The maximum length of the right status bar.
 	export TMUX_POWERLINE_STATUS_RIGHT_LENGTH="90"
 
@@ -90,7 +90,7 @@
 
 # pwd.sh {
 	# Maximum length of output.
-	export TMUX_POWERLINE_SEG_PWD_MAX_LEN="20"
+	export TMUX_POWERLINE_SEG_PWD_MAX_LEN="40"
 # }
 
 # time.sh {

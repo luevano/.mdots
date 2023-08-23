@@ -77,11 +77,10 @@ fi
 
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-		# "mode 0 0 | 0 0 both_disable separator_disable" \
+		"tmux_session_info green black" \
 		"mode_normal_prefix cyan black" \
 		"mode_insert_copy magenta" \
-		"tmux_session_info green black" \
-		"hostname yellow black" \
+		#"hostname yellow black" \
 		"vcs_branch red white" \
 		#"vcs_compare 60 255" \
 		#"vcs_staged 64 255" \
@@ -93,12 +92,14 @@ fi
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
 		"pwd magenta white" \
+		"hostname yellow black" \
+		#"tmux_session_info green black" \
 		#"now_playing 234 37" \
 		#"cpu 240 136" \
 		#"load 237 167" \
 		#"tmux_mem_cpu_load 234 136" \
-		"date_day" \
-		"date black white ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
-		"time black white ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		#"date_day" \
+		#"date black white ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		#"time black white ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 	)
 fi
