@@ -81,7 +81,7 @@ if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 		"mode_normal_prefix cyan black" \
 		"mode_insert_copy magenta" \
 		#"hostname yellow black" \
-		"vcs_branch red white" \
+		#"vcs_branch red white" \
 		#"vcs_compare 60 255" \
 		#"vcs_staged 64 255" \
 		#"vcs_modified 9 255" \
@@ -91,6 +91,7 @@ fi
 
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
+		"vcs_branch red white" \
 		"pwd magenta white" \
 		"hostname yellow black" \
 		#"tmux_session_info green black" \
