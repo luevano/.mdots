@@ -25,6 +25,8 @@ export GOBIN="$HOME/.local/bin/go"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export PATH="$PATH:$GOBIN:$GOPATH/bin"
+# bash
+export BASH_COMPLETIONS="$XDG_DATA_HOME/bash-completion/completions"
 # GPG
 export GPG_TTY=$(tty)
 # less

@@ -31,3 +31,4 @@ fi
 
 [ ! -z "$XDG_CONFIG_HOME" ] && [ -f $XDG_CONFIG_HOME/dircolors ] && eval "$(dircolors $XDG_CONFIG_HOME/dircolors)"
 [ ! -z "$XDG_CONFIG_HOME" ] && [ -f $XDG_CONFIG_HOME/shell/aliasrc ] && source $XDG_CONFIG_HOME/shell/aliasrc
+[ ! -z "$(ls -A $BASH_COMPLETIONS)" ] && for f in $BASH_COMPLETIONS/*; do source $f; done
