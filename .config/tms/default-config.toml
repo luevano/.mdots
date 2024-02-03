@@ -1,3 +1,5 @@
+display_full_path = true
+
 [[search_dirs]]
-path = '/home/david/go'
-depth = 1
+path = '/home/david/code'
+depth = 2
