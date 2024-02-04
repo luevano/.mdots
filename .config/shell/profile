@@ -20,12 +20,15 @@ export LESSHISTFILE="-"
 export HISTSIZE=10000
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+# npm
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # Golang
 export GOBIN="$HOME/.local/bin/go"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export PATH="$PATH:$GOBIN:$GOPATH/bin"
 # Rust
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export PATH="$PATH:$CARGO_HOME/bin"
 # bash
