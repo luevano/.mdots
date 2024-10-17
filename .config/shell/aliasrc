@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # vim selection
-command -v nvim &> /dev/null && alias vim="nvim" vimdiff="nvim -d" vi="nvim"
+command -v nvim >/dev/null 2>&1 && alias vim="nvim" vimdiff="nvim -d" vi="nvim"
 
 # verbosity
 alias cp="cp -iv"
@@ -9,12 +9,21 @@ alias mv="mv -iv"
 alias rm="rm -iv"
 alias mkdir="mkdir -pv"
 
-# ls and use color when available
-alias ls="ls -Ah --color=always --group-directories-first"
+# always use color when available
+# exa (exa) instead of ls when available
+if command -v eza >/dev/null 2>&1; then
+	alias ls="eza -aH --color=automatic --group-directories-first --git"
+	alias ll="ls -l"
+	alias lt="ls -TL 6"
+else
+	alias ls="ls -Ah --color=always --group-directories-first"
 	alias ll="ls -l"
 	alias lll="ls -ltr"
+fi
+
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 
 # dotfiles bare repository management
+# shellcheck disable=SC2139
 alias dots="/usr/bin/git --git-dir=$HOME/.mdots/ --work-tree=$HOME"
