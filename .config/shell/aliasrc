@@ -24,6 +24,33 @@ fi
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 
+#
+# git related
+#
+# base
+alias gs="git status"
+alias gf="git fetch --all --prune"
+
+# add
+alias ga="git add"
+alias gap="git -c interactive.diffFilter='git diff --color=always --word-diff' add -p"
+
+# commit
+alias gc="git commit"
+alias gca="gc --amend"
+alias gcane="gca --no-edit"
+
+# log
+alias gl="git log --graph --all"
+alias glol="git log --graph --decorate --pretty=oneline --abbrev-commit"
+alias glola="glol --all"
+
+# diff
+alias gd="git diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'"
+alias gds="gd --staged"
+# not really helpful
+# alias gd="git diff --color-words=."
+
 # dotfiles bare repository management
 # shellcheck disable=SC2139
 alias dots="/usr/bin/git --git-dir=$HOME/.mdots/ --work-tree=$HOME"
